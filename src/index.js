@@ -1,17 +1,52 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import reactDOM from 'react-dom';
+import './index.css'
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+const firstFilm = {
+   bild :'https://m.media-amazon.com/images/M/MV5BNGVjNWI4ZGUtNzE0MS00YTJmLWE0ZDctN2ZiYTk2YmI3NTYyXkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_UY209_CR0,0,140,209_AL_.jpg',
+   Title : 'Joker',
+   Director : 'Todd Phillips'
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+};
+const andraFilm = {
+   bild :'https://m.media-amazon.com/images/M/MV5BMTc5MDE2ODcwNV5BMl5BanBnXkFtZTgwMzI2NzQ2NzM@._V1_UY209_CR0,0,140,209_AL_.jpg',
+   Title : 'Avengers: Endgame',
+   Director : 'Anthony Russo'
+
+};
+
+
+function FilmList() {
+  return (
+    <section className='FilmList'>
+     <Film  
+     bild={firstFilm.bild} 
+     Title ={firstFilm.Title} 
+     Director = {firstFilm.Director}
+     />
+     <Film  betyg ='bra' number ={10} kat= 'drama'
+     bild={andraFilm.bild}
+     Title={andraFilm.Title}
+     Director={andraFilm.Director}/>
+     <Film  Title='Nån title' number ={9}/>
+     <Film />
+     <Film kat='roman'/>
+     
+    </section>  
+  );
+}
+const Film = (props) => {
+  return ( 
+  <article className='film'>
+     <img src ={props.bild} alt =''/>
+     <h1>{props.Title}</h1>
+    <h3>{props.Director}</h3>
+    <h1>{props.kat}</h1>
+    </article>
+  );
+ };
+  
+
+      
+reactDOM.render(<FilmList />, document.
+  getElementById('root'));
