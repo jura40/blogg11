@@ -1,23 +1,21 @@
 import React from 'react';
 import reactDOM from 'react-dom';
 import './index.css';
-import {data} from './films'
-import Spec from './Film'
-import {greeting} from './Test/test'
+import {database} from './films'
+import Film from './Film'
+import {greeting} from './test'
 
 function FilmList() {
-  console.log(greeting);
-  return ( 
-  <section className ='FilmList'>
-    {data.map((film, index) => {
- return <Spec key = {film.id} {...
- film}></Spec>;
 
+  return ( 
+    <section className ='FilmList'>
+    {database.map((film) => {
+      return <Film key={film.id} {...film}></Film>;
+        
     })}
 </section>
   );  
 }
 
 
-reactDOM.render(<FilmList />, document.
-  getElementById('root'));
+reactDOM.render(<FilmList />, document.getElementById('root'));

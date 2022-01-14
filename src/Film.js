@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Film = ({Title, bild, Director, kat}) => {
+const cat = ({Title, bild, Director, kat}) => {
   //atrubut
   const clickHandler = (e) => {
     console.log(e);
@@ -12,7 +12,7 @@ const Film = ({Title, bild, Director, kat}) => {
   }
   return ( 
   <article className='film' onMouseOver = {() => {
-    console.log(Title);
+    console.log(Title,Director);
   }}>
      <img src ={bild} alt =''/>
      <h1 onClick = {() => console.log(Title)}> {Title}</h1>
@@ -20,12 +20,12 @@ const Film = ({Title, bild, Director, kat}) => {
     <h1>{kat}</h1>
     <button type='button' onClick={clickHandler}>
        Knapp</button>
-       <button type = "button" onClick={exempel(Director)
+       <button type = "button" onClick={exempel(Director,Title)
       }>
-        mer exempel
+        mer exempel 
         </button>
     </article>
   );
  };
  
-export default Film
+export default cat
